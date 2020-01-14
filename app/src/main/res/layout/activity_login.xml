@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context="com.example.lenovo.myapplication.LoginActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_username"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:maxLength="11"
+        android:hint="@string/hint_username"
+        android:maxLines="1">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:imeOptions="actionDone"
+        android:layout_marginTop="20dp"
+        android:maxLines="1">
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_btn1"
+        android:text="@string/btn_login"
+        android:onClick="onLoginClick"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_register_newaccount"
+        android:onClick="onRegisterClick"
+        android:background="@drawable/background_btn2"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

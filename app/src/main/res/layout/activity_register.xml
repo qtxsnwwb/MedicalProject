@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:padding="40dp"
+    android:orientation="vertical">
+
+<EditText
+    android:id="@+id/edit_register_username"
+    android:layout_width="match_parent"
+    android:inputType="number"
+    android:maxLength="11"
+    android:layout_height="50dp"
+    android:hint="@string/hint_username"/>
+
+    <EditText
+        android:id="@+id/edit_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:layout_marginTop="20dp"
+        android:hint="@string/hint_password"/>
+
+    <EditText
+        android:id="@+id/edit_register_re_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:layout_marginTop="20dp"
+        android:hint="@string/hint_confirm_password"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_btn1"
+        android:text="@string/btn_register"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"/>
+
+
+
+</LinearLayout>
