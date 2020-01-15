@@ -8,9 +8,34 @@
     android:orientation="vertical"
     android:padding="40dp">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_main_visit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="首页"/>
+        android:layout_marginTop="20dp"
+        android:text="访庵庐"
+        android:background="@drawable/background_btn_green"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_main_gps"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="望杏林"
+        android:background="@drawable/background_btn_green"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_main_check"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="开药方"
+        android:background="@drawable/background_btn_green"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </LinearLayout>

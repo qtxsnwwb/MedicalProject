@@ -14,6 +14,7 @@
     android:inputType="number"
     android:maxLength="11"
     android:layout_height="50dp"
+    android:singleLine="true"
     android:hint="@string/hint_username"/>
 
     <EditText
@@ -23,6 +24,7 @@
         android:inputType="textPassword"
         android:maxLength="20"
         android:layout_marginTop="20dp"
+        android:singleLine="true"
         android:hint="@string/hint_password"/>
 
     <EditText
@@ -32,15 +34,17 @@
         android:inputType="textPassword"
         android:maxLength="20"
         android:layout_marginTop="20dp"
+        android:singleLine="true"
         android:hint="@string/hint_confirm_password"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/background_btn1"
+        android:background="@drawable/background_btn_green"
         android:text="@string/btn_register"
         android:textSize="20dp"
+        android:onClick="registerCheck"
         android:textColor="#FFFFFF"/>
 
 

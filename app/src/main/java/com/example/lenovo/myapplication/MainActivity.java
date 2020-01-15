@@ -3,6 +3,10 @@ package com.example.lenovo.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * @Description 主页面
+ * @author 许鹤铭
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

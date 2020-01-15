@@ -9,17 +9,17 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/edit_username"
+        android:id="@+id/edit_login_username"
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:maxLength="11"
         android:hint="@string/hint_username"
-        android:maxLines="1">
+        android:singleLine="true">
     </EditText>
 
     <EditText
-        android:id="@+id/edit_password"
+        android:id="@+id/edit_login_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/hint_password"
@@ -27,7 +27,7 @@
         android:maxLength="20"
         android:imeOptions="actionDone"
         android:layout_marginTop="20dp"
-        android:maxLines="1">
+        android:singleLine="true">
     </EditText>
 
     <Button
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/background_btn1"
+        android:background="@drawable/background_btn_green"
         android:text="@string/btn_login"
         android:onClick="onLoginClick"
         android:textColor="#FFFFFF"
@@ -43,13 +43,13 @@
 
 
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_registerNewAccount"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/btn_register_newaccount"
-        android:onClick="onRegisterClick"
-        android:background="@drawable/background_btn2"
+        android:onClick="onRegisterNewAccountClick"
+        android:background="@drawable/background_btn_gray"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
