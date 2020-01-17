@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lenovo.myapplication.MainActivity">
+    tools:context="com.example.lenovo.myapplication.com.example.lenovo.medicalProject.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,5 +22,13 @@
         android:text="Button"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="btnDemo"
+        tools:layout_editor_absoluteX="212dp"
+        tools:layout_editor_absoluteY="139dp" />
 
 </android.support.constraint.ConstraintLayout>
