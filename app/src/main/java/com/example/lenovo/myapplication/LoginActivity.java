@@ -1,9 +1,10 @@
 package com.example.lenovo.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -13,7 +14,7 @@ import android.widget.Toast;
  * @author 许鹤铭
  */
 public class LoginActivity extends AppCompatActivity {
-
+    public static Activity loginActivity;
     private EditText loginUsername;
     private EditText loginPassword;
 
@@ -21,9 +22,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        loginActivity=this;
 
         if(getSharedPreferences("usersInfo",MODE_PRIVATE).getBoolean("flag",false)){
-            Intent intent =new Intent(LoginActivity.this,MainActivity.class);
+            Intent intent =new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         }
 
@@ -51,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             if(loginDataCheck()) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+
             }
         }
     }
