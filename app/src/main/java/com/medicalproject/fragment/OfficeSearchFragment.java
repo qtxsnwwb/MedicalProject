@@ -7,8 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.content.Intent;
 
+import com.example.lenovo.medicalProject.DoctorActivity;
 import com.example.lenovo.myapplication.R;
 import com.medicalproject.adapter.OfficeAdapter;
 
@@ -37,11 +38,13 @@ public class OfficeSearchFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.lv_hosp);
         listView.setAdapter(adapter = new OfficeAdapter(view.getContext(), items));
 
-        //设置监听事件
+        //设置点击监听事件
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View v, int position, long id) {
-                Toast.makeText(getActivity(), items.get(position)+"", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), DoctorActivity.class);
+                intent.putExtra("officeName", items.get(position));
+                startActivity(intent);
             }
         });
 

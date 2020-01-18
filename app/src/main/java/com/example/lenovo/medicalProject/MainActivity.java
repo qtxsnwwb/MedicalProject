@@ -3,7 +3,6 @@ package com.example.lenovo.medicalProject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import android.util.Log;
 import android.view.Window;
 
 import com.example.lenovo.myapplication.R;
