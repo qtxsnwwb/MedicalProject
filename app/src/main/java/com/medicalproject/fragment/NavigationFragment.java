@@ -126,7 +126,6 @@ public class NavigationFragment extends Fragment implements RouteSearch.OnRouteS
     public void onDriveRouteSearched(DriveRouteResult drr, int rCode){
         if(rCode == 1000){
             List<DrivePath> pathList = drr.getPaths();
-            Toast.makeText(getActivity(), pathList.size()+"", Toast.LENGTH_SHORT).show();
             List<LatLng> driverPath = new ArrayList<>();
 
             for (DrivePath dp: pathList){

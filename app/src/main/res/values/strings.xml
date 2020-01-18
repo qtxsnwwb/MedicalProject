@@ -3,5 +3,7 @@
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="navi_left">医院导航</string>
     <string name="navi_right">周边商铺</string>
+    <string name="hosp_left">智能分诊</string>
+    <string name="hosp_right">门诊查询</string>
 
 </resources>
