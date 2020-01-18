@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 主体Fragment -->
+    <FrameLayout
+        android:id="@+id/main_container_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_line_hospital"/>
+
+    <!-- 导航栏分割线 -->
+    <View
+        android:id="@+id/view_line_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#303F9F"
+        android:layout_above="@+id/ll_hosp_top"/>
+
+    <!-- 底部导航栏 -->
+    <LinearLayout
+        android:id="@+id/ll_hosp_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#F2F2F2"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/tv_hosp_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:textColor="@color/text_color"
+            android:text="@string/hosp_left"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#66CCFF"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/tv_hosp_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:textColor="@color/text_color"
+            android:text="@string/hosp_right"/>
+    </LinearLayout>
+
+</RelativeLayout>
