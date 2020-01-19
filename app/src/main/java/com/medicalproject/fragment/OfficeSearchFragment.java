@@ -43,7 +43,7 @@ public class OfficeSearchFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View v, int position, long id) {
                 Intent intent = new Intent(getActivity(), DoctorActivity.class);
-                intent.putExtra("officeName", items.get(position));
+                intent.putExtra("officeName", position+"");
                 startActivity(intent);
             }
         });
