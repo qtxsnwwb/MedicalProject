@@ -12,15 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lenovo.myapplication.R;
-import com.medicalproject.adapter.DoctorAdapter;
-import com.medicalproject.bean.DoctorBean;
 import com.medicalproject.bean.ReportBean;
 import com.medicalproject.util.DBUtils;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -52,11 +46,8 @@ public class DiagnoseActivity extends AppCompatActivity {
         tv_diagnose = (TextView) findViewById(R.id.tv_diagnose_result);
         tv_medicine = (TextView) findViewById(R.id.tv_medicine_advice);
 
-        //模拟添加数据
-        addUser();
-
         //获取用户信息
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("userFile", Context.MODE_PRIVATE);
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         final String userID = sp.getString("userID", "");
         //开启线程获取数据库数据
         new Thread(new Runnable() {
@@ -105,10 +96,4 @@ public class DiagnoseActivity extends AppCompatActivity {
         }
     };
 
-    private void addUser(){
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("userFile", Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = sp.edit();
-        edit.putString("userID", "234");
-        edit.commit();
-    }
 }

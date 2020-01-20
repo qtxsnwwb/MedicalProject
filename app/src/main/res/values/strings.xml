@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">千金方</string>
     <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="hint_username">用户名</string>
+    <string name="hint_password">密码</string>
+    <string name="hint_confirm_password">确认密码</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_register_newaccount">注册新账号</string>
+    <string name="btn_register">注册</string>
     <string name="navi_left">医院导航</string>
     <string name="navi_right">周边商铺</string>
     <string name="hosp_left">智能分诊</string>
@@ -15,5 +21,6 @@
     <string name="doctor_name">主治医生：</string>
     <string name="diagnose_result">诊断结果</string>
     <string name="medicine_advice">建议用药</string>
+    <string name="title_activity_register">RegisterActivity</string>
 
 </resources>

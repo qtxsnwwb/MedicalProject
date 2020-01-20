@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * 数据库工具类
@@ -123,6 +124,82 @@ public class DBUtils {
         }catch(Exception e){
             e.printStackTrace();
             return null;
+        }
+    }
+
+    /**
+     * 匹配用户名和密码
+     * @param userName 用户名
+     * @param userPass 密码
+     * @return 匹配成功则返回UserID，匹配失败则返回null
+     */
+    public static String loginDataCheck(String userName, String userPass){
+        ArrayList<String> list = new ArrayList<>();
+        //根据数据库名称，建立连接
+        Connection connection = getConn("medical");
+
+        try{
+            String sql = "select * from user where UserName = ? and UserPass = ?";
+            if(connection != null){    //成功与数据库建立连接
+                PreparedStatement ps = connection.prepareStatement(sql);
+                if(ps != null){
+                    ps.setString(1, userName);
+                    ps.setString(2, userPass);
+                    //执行sql查询语句并返回结果集
+                    ResultSet rs = ps.executeQuery();
+                    if(rs != null){     //查询结果不为空
+                        while(rs.next()){
+                            list.add(rs.getString(1));
+                        }
+                        rs.close();
+                        ps.close();
+                        connection.close();
+                        if(list.size() != 0) {
+                            return list.get(0);
+                        }else{
+                            return null;
+                        }
+                    }else{
+                        return null;
+                    }
+                }else{
+                    return null;
+                }
+            }else{
+                return null;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 添加用户信息（注册）
+     * @param userName 用户名
+     * @param userPass 密码
+     */
+    public static void addRegisterData(String userName, String userPass){
+        //根据数据库名称，建立连接
+        Connection connection = getConn("medical");
+
+        try{
+            String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+            String sql = "insert into user values(?,?,?,1)";
+            if(connection != null){    //成功与数据库建立连接
+                PreparedStatement ps = connection.prepareStatement(sql);
+                if(ps != null){
+                    ps.setString(1, uuid);
+                    ps.setString(2, userName);
+                    ps.setString(3, userPass);
+                    //执行sql插入语句
+                    ps.executeUpdate();
+                    ps.close();
+                    connection.close();
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 }
