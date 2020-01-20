@@ -50,7 +50,9 @@
 
         <activity android:name="com.example.lenovo.medicalProject.HospitalActivity" />
         <activity android:name="com.example.lenovo.medicalProject.DoctorActivity" />
-        <activity android:name="com.example.lenovo.medicalProject.DiagnoseActivity"></activity>
+        <activity android:name="com.example.lenovo.medicalProject.DiagnoseActivity" />
+        <activity android:name="com.example.lenovo.medicalProject.LoginActivity" />
+        <activity android:name="com.example.lenovo.medicalProject.RegisterActivity"></activity>
     </application>
 
 </manifest>
