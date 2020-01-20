@@ -7,5 +7,13 @@
     <string name="hosp_right">门诊查询</string>
     <string name="registration">挂号</string>
     <string name="doctor_return">返回首页</string>
+    <string name="report_title">诊断报告单</string>
+    <string name="patient_name">姓名：</string>
+    <string name="patient_sex">性别：</string>
+    <string name="patient_age">年龄：</string>
+    <string name="office_name">申请科室：</string>
+    <string name="doctor_name">主治医生：</string>
+    <string name="diagnose_result">诊断结果</string>
+    <string name="medicine_advice">建议用药</string>
 
 </resources>

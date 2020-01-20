@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 标题 -->
+    <TextView
+        android:id="@+id/tv_diagnose_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/report_title"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="#cacaca"/>
+
+    <!-- 分割线1 -->
+    <View
+        android:id="@+id/view_line_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#303F9F"
+        android:layout_below="@+id/tv_diagnose_title"
+        android:layout_marginTop="15dp"/>
+
+    <!-- 患者信息 -->
+    <LinearLayout
+        android:id="@+id/ll_patient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/view_line_1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- 姓名 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_name"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_patient_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zhangsan"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#66CCFF"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"/>
+
+        <!-- 性别 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_sex"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_patient_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="man"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#66CCFF"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"/>
+
+        <!-- 年龄 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_age"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_patient_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 分割线2 -->
+    <View
+        android:id="@+id/view_line_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#303F9F"
+        android:layout_below="@+id/ll_patient"/>
+
+    <!-- 医生信息 -->
+    <LinearLayout
+        android:id="@+id/ll_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/view_line_2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <!-- 申请科室 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/office_name"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_diagnose_office"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zhongliuke"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#66CCFF"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"/>
+
+        <!-- 主治医生 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_name"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_diagnose_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lisi"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 分割线3 -->
+    <View
+        android:id="@+id/view_line_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#303F9F"
+        android:layout_below="@+id/ll_doctor"/>
+
+    <!-- 分割线4 -->
+    <View
+        android:id="@+id/view_line_4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#303F9F"
+        android:layout_below="@+id/view_line_3"
+        android:layout_marginTop="10dp"/>
+
+    <!-- 诊断结果 -->
+    <LinearLayout
+        android:id="@+id/ll_diagnose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/view_line_4"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/diagnose_result"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/tv_diagnose_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="asfdscwefcsdvsdcsdvcx"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <!-- 分割线5 -->
+    <View
+        android:id="@+id/view_line_5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#303F9F"
+        android:layout_below="@+id/ll_diagnose"
+        android:layout_marginTop="10dp"/>
+
+    <!-- 建议用药 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/view_line_5"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/medicine_advice"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/tv_medicine_advice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="asfdscwefcsdvsdcsdvcx"
+            android:textSize="18dp"
+            android:clickable="true"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

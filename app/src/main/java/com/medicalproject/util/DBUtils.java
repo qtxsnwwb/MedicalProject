@@ -1,6 +1,7 @@
 package com.medicalproject.util;
 
 import com.medicalproject.bean.DoctorBean;
+import com.medicalproject.bean.ReportBean;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -61,6 +62,50 @@ public class DBUtils {
                             String doctorIntro = rs.getString(3);
                             DoctorBean doctorBean = new DoctorBean(doctorName, doctorIntro);
                             list.add(doctorBean);
+                        }
+                        rs.close();
+                        ps.close();
+                        connection.close();
+                        return list;
+                    }else{
+                        return null;
+                    }
+                }else{
+                    return null;
+                }
+            }else{
+                return null;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 根据用户ID获取报告单信息
+     * @param userID 用户ID
+     * @return
+     */
+    public static List<ReportBean> getReportInfoByUserID(String userID){
+        List<ReportBean> list = new ArrayList<>();
+        //根据数据库名称，建立连接
+        Connection connection = getConn("medical");
+
+        try{
+            String sql = "select * from report where PatientID = ?";
+            if(connection != null){    //成功与数据库建立连接
+                PreparedStatement ps = connection.prepareStatement(sql);
+                if(ps != null){
+                    ps.setString(1, userID);
+                    //执行sql查询语句并返回结果集
+                    ResultSet rs = ps.executeQuery();
+                    if(rs != null){     //查询结果不为空
+                        while(rs.next()){
+                            ReportBean reportBean = new ReportBean(rs.getString(3), rs.getString(4),
+                                    rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8),
+                                    rs.getString(9));
+                            list.add(reportBean);
                         }
                         rs.close();
                         ps.close();

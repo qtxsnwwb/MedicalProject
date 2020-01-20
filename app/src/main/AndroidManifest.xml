@@ -49,7 +49,8 @@
             android:value="b46b6179bbf2c955833d9b233e145049" />
 
         <activity android:name="com.example.lenovo.medicalProject.HospitalActivity" />
-        <activity android:name="com.example.lenovo.medicalProject.DoctorActivity"></activity>
+        <activity android:name="com.example.lenovo.medicalProject.DoctorActivity" />
+        <activity android:name="com.example.lenovo.medicalProject.DiagnoseActivity"></activity>
     </application>
 
 </manifest>
