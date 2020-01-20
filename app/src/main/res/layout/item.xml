@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:text="标题"
+        android:textSize="18dp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/tv_doctor_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_doctor_name"
+        android:layout_marginLeft="15sp"
+        android:text="内容"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:maxWidth="300sp"
+        android:maxLength="50"/>
+
+    <Button
+        android:id="@+id/btn_doctor_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20sp"/>
+
+</RelativeLayout>
