@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * ListView适配器类
+ * ListView科室适配器类
  * @author 汪文博
  */
 public class OfficeAdapter extends BaseAdapter {

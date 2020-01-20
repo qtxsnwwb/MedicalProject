@@ -3,10 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/demo"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/lv_doctor"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hello world"/>
+        android:paddingLeft="20dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="2dp"
+        android:background="@android:color/background_light"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/view_line_return"/>
+
+    <!-- 分割线 -->
+    <View
+        android:id="@+id/view_line_return"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#303F9F"
+        android:layout_above="@+id/tv_doctor_return"/>
+
+    <TextView
+        android:id="@+id/tv_doctor_return"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/doctor_return"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:background="#0a48c5"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"/>
 
 </RelativeLayout>
