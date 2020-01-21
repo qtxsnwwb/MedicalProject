@@ -7,6 +7,15 @@
     <string name="btn_login">登录</string>
     <string name="btn_register_newaccount">注册新账号</string>
     <string name="btn_register">注册</string>
+    <string name="main_title_1">访庵庐</string>
+    <string name="main_title_2">望杏林</string>
+    <string name="main_title_3">开药方</string>
+    <string name="main_container_title_1">一键帮您线上就医</string>
+    <string name="main_container_title_2">医院导航不再迷路</string>
+    <string name="main_container_title_3">诊断结果快速查看</string>
+    <string name="main_container_content_1">最快速的绿色通道，解决您的挂号烦恼</string>
+    <string name="main_container_content_2">最准确的方向引导，周边商铺一目了然</string>
+    <string name="main_container_content_3">最便捷的报告查询，药品信息在线获取</string>
     <string name="navi_left">医院导航</string>
     <string name="navi_right">周边商铺</string>
     <string name="hosp_left">智能分诊</string>
