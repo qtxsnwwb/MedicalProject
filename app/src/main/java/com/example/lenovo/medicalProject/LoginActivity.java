@@ -31,11 +31,11 @@ public class LoginActivity extends AppCompatActivity {
 
         sContext = this;
 
-        //测试，正规代码删除
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-        if(sp != null){
-            sp.edit().clear().commit();
-        }
+//        //测试，正规代码删除
+//        SharedPreferences sp = getApplicationContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+//        if(sp != null){
+//            sp.edit().clear().commit();
+//        }
 
         //判断是否已登录，若已登录则跳转到首页
         if(isLogin()){

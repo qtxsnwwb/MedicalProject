@@ -1,34 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.lenovo.myapplication.com.example.lenovo.medicalProject.MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- 轮播图 -->
+    <RelativeLayout
+        android:id="@+id/rl_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/ll_viewGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="3dp"
+            android:orientation="horizontal"/>
+    </RelativeLayout>
+
+    <!-- 主体内容 -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/rl_banner"
+        android:layout_marginTop="30sp"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#303F9F" />
+
+        <!-- 访庵庐 -->
+        <RelativeLayout
+            android:id="@+id/rl_main_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true">
+
+            <LinearLayout
+                android:id="@+id/ll_left_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56sp"
+                    android:src="@mipmap/icon_hospital" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_title_1"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/ll_left_1"
+                android:orientation="vertical"
+                android:layout_marginLeft="25dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_main_title_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_container_title_1"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_container_content_1"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/icon_right_arrow"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#303F9F" />
+
+        <!-- 望杏林 -->
+        <RelativeLayout
+            android:id="@+id/rl_main_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/ll_left_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56sp"
+                    android:src="@mipmap/icon_navigation" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_title_2"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/ll_left_2"
+                android:orientation="vertical"
+                android:layout_marginLeft="25dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_main_title_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_container_title_2"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_container_content_2"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/icon_right_arrow"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#303F9F" />
+
+        <!-- 开药方 -->
+        <RelativeLayout
+            android:id="@+id/rl_main_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/ll_left_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56sp"
+                    android:src="@mipmap/icon_medicine" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_title_3"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/ll_left_3"
+                android:orientation="vertical"
+                android:layout_marginLeft="25dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_main_title_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_container_title_3"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_container_content_3"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/icon_right_arrow"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#303F9F" />
+
+    </LinearLayout>
+
+
+    <!--<Button
+        android:id="@+id/btn_main_visit"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:text="访庵庐"
+        android:background="@drawable/background_btn_green"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:id="@+id/btn_main_gps"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:text="望杏林"
+        android:background="@drawable/background_btn_green"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="btnDemo"
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="139dp" />
+        android:id="@+id/btn_main_check"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:text="开药方"
+        android:background="@drawable/background_btn_green"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />-->
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
