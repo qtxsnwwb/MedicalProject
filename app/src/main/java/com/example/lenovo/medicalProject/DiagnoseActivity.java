@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.lenovo.myapplication.R;
 import com.medicalproject.bean.ReportBean;
 import com.medicalproject.util.DBUtils;
+import com.medicalproject.util.OfficeUtils;
 
 import java.util.List;
 
@@ -54,6 +55,7 @@ public class DiagnoseActivity extends AppCompatActivity {
             String userIDInner = userID;
             @Override
             public void run() {
+//                List<ReportBean> list = DBUtils.getReportInfoByUserID("234");
                 List<ReportBean> list = DBUtils.getReportInfoByUserID(userIDInner);
                 Message message = handler.obtainMessage();
                 message.obj = list;
@@ -83,7 +85,7 @@ public class DiagnoseActivity extends AppCompatActivity {
                 tv_name.setText(reportBean.getUserName());
                 tv_sex.setText(reportBean.getUserSex());
                 tv_age.setText(reportBean.getUserAge());
-                tv_office.setText(reportBean.getOffice());
+                tv_office.setText(OfficeUtils.map.get(reportBean.getOffice()));
                 tv_doctor.setText(reportBean.getDoctor());
                 tv_diagnose.setText(reportBean.getDiagnoseRsult());
                 tv_medicine.setText(reportBean.getMedicine());

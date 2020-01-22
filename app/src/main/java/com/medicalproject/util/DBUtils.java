@@ -29,7 +29,7 @@ public class DBUtils {
         Connection connection = null;
         try{
             Class.forName(driver);    //动态加载类
-            String ip = "192.168.43.31";      //本机IP地址，每次更换网路都需做修改！！！
+            String ip = "192.168.0.101";      //本机IP地址，每次更换网路都需做修改！！！
 
             //尝试建立到给定数据库URL的连接
             connection = DriverManager.getConnection("jdbc:mysql://"+ip+":3306/"+dbName, user, password);
