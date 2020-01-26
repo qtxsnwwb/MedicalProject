@@ -3,14 +3,19 @@ package com.medicalproject.adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lenovo.myapplication.R;
+import com.medicalproject.service.ListenService;
+import com.medicalproject.util.DBUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -86,8 +91,35 @@ public class DoctorAdapter extends BaseAdapter {
             public void onClick(View view) {
                 //此处设置挂号功能
 
+                //测试代码
+                SharedPreferences sp1 = layoutInflater.getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                SharedPreferences.Editor edit = sp1.edit();
+                edit.putString("userID", "234");
+                edit.commit();
 
-                System.out.println(position);
+                //获取患者ID
+                SharedPreferences sp = layoutInflater.getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                final String userID = sp.getString("userID", "");
+
+                //开启线程进行数据库操作
+                new Thread(new Runnable() {
+                    String userIDInner = userID;
+                    @Override
+                    public void run() {
+                        DBUtils.addCallNumber(userID, list.get(position).get("ItemName").toString());
+                    }
+                }).start();
+                for(int i=0; i<100000; i++){}
+                Toast.makeText(layoutInflater.getContext(), "挂号成功！", Toast.LENGTH_SHORT).show();
+
+                //开启Service监听
+                //存储医生姓名
+                SharedPreferences.Editor editDoctor = sp.edit();
+                editDoctor.putString("doctorName", list.get(position).get("ItemName").toString());
+                editDoctor.commit();
+
+                Intent intent = new Intent(layoutInflater.getContext(), ListenService.class);
+                layoutInflater.getContext().startService(intent);
             }
         });
         return convertView;

@@ -52,7 +52,12 @@
         <activity android:name="com.example.lenovo.medicalProject.DoctorActivity" />
         <activity android:name="com.example.lenovo.medicalProject.DiagnoseActivity" />
         <activity android:name="com.example.lenovo.medicalProject.LoginActivity" />
-        <activity android:name="com.example.lenovo.medicalProject.RegisterActivity"></activity>
+        <activity android:name="com.example.lenovo.medicalProject.RegisterActivity" />
+
+        <service
+            android:name="com.medicalproject.service.ListenService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

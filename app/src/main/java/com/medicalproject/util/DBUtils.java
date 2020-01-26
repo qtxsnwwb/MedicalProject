@@ -202,4 +202,77 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 添加挂号信息
+     * @param userID 患者ID
+     * @param doctorName 医生姓名
+     */
+    public static void addCallNumber(String userID, String doctorName){
+        if(isCall(userID, doctorName)) {
+            return;
+        }
+
+        //根据数据库名称，建立连接
+        Connection connection = getConn("medical");
+
+        try{
+            String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+            String sql = "insert into wait values(?,?,?)";
+            if(connection != null){    //成功与数据库建立连接
+                PreparedStatement ps = connection.prepareStatement(sql);
+                if(ps != null){
+                    ps.setString(1, uuid);
+                    ps.setString(2, userID);
+                    ps.setString(3, doctorName);
+                    //执行sql插入语句
+                    ps.executeUpdate();
+                    ps.close();
+                    connection.close();
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 判断是否已挂号
+     * @param userID 患者ID
+     * @param doctorName 医生姓名
+     * @return true为已挂号，false为未挂号
+     */
+    public static boolean isCall(String userID, String doctorName){
+        //根据数据库名称，建立连接
+        Connection connection = getConn("medical");
+
+        try{
+            String sql = "select * from wait where PatientID=? and DoctorName=?";
+            if(connection != null){    //成功与数据库建立连接
+                PreparedStatement ps = connection.prepareStatement(sql);
+                if(ps != null){
+                    ps.setString(1, userID);
+                    ps.setString(2, doctorName);
+                    //执行sql查询语句并返回结果集
+                    ResultSet rs = ps.executeQuery();
+                    if(rs.next()){     //查询结果不为空
+                        rs.close();
+                        ps.close();
+                        connection.close();
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
