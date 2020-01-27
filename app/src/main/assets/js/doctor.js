@@ -53,6 +53,7 @@ function callNumber() {
     //获取医生信息
     var doctorName = $.cookie("doctorName");
     var patientName = $(".nextPatient .nextName").text();
+    var patientID = $(".currentPatientID").text();
     if(patientName == "无"){
         alert("当前无排队病人！");
         return;
@@ -60,7 +61,7 @@ function callNumber() {
     $.ajax({
         type: "POST",
         url: "deleteTeamTop.php",
-        data: "doctorName="+doctorName+"&patientName="+patientName,
+        data: "doctorName="+doctorName+"&patientName="+patientID,
         success: function (msg) {
             if(msg == "success"){
                 alert("叫号成功！"+patientName+"即将就诊");
@@ -83,11 +84,30 @@ function getTeamMsg(doctorName) {
         data: "doctorName="+doctorName,
         success: function (msg) {
             var obj = JSON.parse(msg);
-            $(".currentWait b").text(obj.teamNum);
-            $(".nextName").text(obj.patientID);
+            $(".currentWait b").text(obj.teamNum);    //当前排队人数
+            $(".nextName").text(getPatientName(obj.patientID));     //下一个叫号病人ID
+            $(".currentPatientID").text(obj.patientID);
         }
     });
 
+}
+
+/**
+ * 获取病人姓名
+ * @param patientID 病人ID
+ */
+function getPatientName(patientID){
+    var currentPatientName = "";
+    $.ajax({
+        type: "POST",
+        url: "getPatientName.php",
+        async: false,
+        data: "patientID="+patientID,
+        success: function (msg) {
+            currentPatientName = msg;
+        }
+    });
+    return currentPatientName;
 }
 
 /**
