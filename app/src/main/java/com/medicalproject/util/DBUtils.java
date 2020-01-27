@@ -275,4 +275,46 @@ public class DBUtils {
         return false;
     }
 
+    /**
+     * 获取当前排队人数
+     * @param doctorName 医生姓名
+     * @return 当前排队人数
+     */
+    public static int getCurrentPeople(String doctorName){
+        //根据数据库名称，建立连接
+        Connection connection = getConn("medical");
+
+        try{
+            String sql = "select * from wait where DoctorName = ?";
+            if(connection != null){    //成功与数据库建立连接
+                PreparedStatement ps = connection.prepareStatement(sql);
+                if(ps != null){
+                    ps.setString(1, doctorName);
+                    //执行sql查询语句并返回结果集
+                    ResultSet rs = ps.executeQuery();
+                    int num = 0;
+                    if(rs != null){     //查询结果不为空
+                        while(rs.next()){
+                            num++;
+                        }
+                        rs.close();
+                        ps.close();
+                        connection.close();
+                        return num;
+                    }else{
+                        return 0;
+                    }
+                }else{
+                    return 0;
+                }
+            }else{
+                return 0;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
 }
