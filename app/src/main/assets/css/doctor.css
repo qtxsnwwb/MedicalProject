@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 顶部 */
+.header{
+    position: relative;
+    z-index: 1003;
+    height: 80px;
+    width: auto;
+    background-color: #18223d;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 25px;
+    line-height: 80px;
+}
+
+.header .title{
+    width: 200px;
+    height: auto;
+    margin: auto;
+}
+
+.header .welcome{
+    width: 200px;
+    height: 80px;
+    font-size: 15px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+/* 导航栏 */
+ul.nav{
+    font-size: 20px;
+}
+
+li.nav-item{
+    margin: auto;
+}
+
+/* 主体内容 */
+/* 报告单系统 */
+button.btn-primary{
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* 叫号系统 */
+/* 盒子 */
+.top-box{
+    width: 450px;
+    height: 400px;
+    box-shadow: 10px 10px 5px #888888;
+    border-style: inset;
+    border-width: 5px;
+    margin: auto;
+}
+
+.top-box .currentWait{
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.top-box .nextWait{
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.top-box .nextPatient{
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: #0a628f;
+    font-size: 30px;
+    text-align: center;
+    line-height: 180px;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+#callNum{
+    width: 450px;
+    height: 60px;
+    font-size: 25px;
+    margin: 40px auto;
+}

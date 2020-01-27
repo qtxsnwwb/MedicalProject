@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>千金方-医生主页</title>
+	<link rel="stylesheet" type="text/css" href="css/doctor.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/doctor.js"></script>
+</head>
+<body>
+<!-- 顶部 -->
+<div class="header">
+    <div class="title">
+        <span>医生办公系统</span>
+    </div>
+    <div class="welcome">
+        欢迎您，
+        <span></span>
+    </div>
+</div>
+
+<!-- 导航栏（动态选项卡） -->
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#report">报告单系统</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#call">叫号系统</a>
+    </li>
+</ul>
+
+<!-- 主体内容 -->
+<div class="tab-content">
+    <!-- 报告单系统 -->
+    <div id="report" class="container tab-pane active"><br>
+        <form>
+            <div class="form-group">
+                <label for="patientName">姓名：</label>
+                <input type="text" class="form-control" id="patientName" placeholder="请输入病人姓名...">
+            </div>
+            <div class="form-group">
+                <label for="patientSex">性别：</label>
+                <input type="text" class="form-control" id="patientSex" placeholder="请输入病人性别...">
+            </div>
+            <div class="form-group">
+                <label for="patientAge">年龄：</label>
+                <input type="text" class="form-control" id="patientAge" placeholder="请输入病人年龄...">
+            </div>
+            <div class="form-group">
+                <label for="office">申请科室：</label>
+                <input type="text" class="form-control" id="office" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="doctorMain">主治医生：</label>
+                <input type="text" class="form-control" id="doctorMain" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="diagnose">诊断结果：</label>
+                <textarea class="form-control" rows="5" id="diagnose"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medicine">建议用药：</label>
+                <textarea class="form-control" rows="5" id="medicine"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="uploadReport()">上传</button>
+        </form>
+    </div>
+
+    <!-- 叫号系统 -->
+    <div id="call" class="container tab-pane fade"><br>
+        <div class="box">
+            <div class="top-box">
+                <span class="currentWait">当前等待人数：<b></b>人</span>
+                <span class="nextWait">下一位等待病人：</span>
+                <div class="nextPatient">
+                    <span class="nextName"><b></b></span>
+                </div>
+            </div>
+        </div>
+        <center><button type="button" class="btn btn-primary" id="callNum" onclick="callNumber()">叫号</button></center>
+    </div>
+</div>
+</body>
+</html>

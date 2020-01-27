@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>千金方-登录</title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="js/login.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/login.css" id="css">
+    </head>
+    
+    <body>
+        <h1>千金方</h1>
+        <form>
+            <label>账号：<input id="username" type="text" onblur="checkName()"></label><br>
+            <p id="usernameTip" style="display:none;font-size: 10px; color: crimson;">账号不能为空！</p>
+            <label>密码：<input id="password" type="password" onblur="checkPassword()"></label><br>
+            <p id="passwordTip" style="display:none;font-size: 10px;color: crimson;">密码不能为空！</p>
+            <input id="btn" type="button" onclick="clickCheck()" value="登录">
+        </form>
+    </body>
+</html>
+

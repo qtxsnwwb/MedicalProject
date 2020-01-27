@@ -1,0 +1,28 @@
+.header{
+    position: relative;
+    z-index: 1003;
+    height: 80px;
+    width: auto;
+    background-color: #18223d;
+    text-align: center;
+    font-size: 25px;
+    line-height: 75px;
+}
+
+.header .title{
+    vertical-align: middle;
+    width: auto;
+    height: 80px;
+    display: inline-block;
+    text-align: center;
+}
+
+.header .addData{
+	position: absolute;
+	width: auto;
+	height:80px;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+	right:10px;
+}

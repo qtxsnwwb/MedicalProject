@@ -1,0 +1,30 @@
+body{
+    font-size:20px;/*字体大小*/
+    color:#666666;/*字体颜色*/
+    background:#fff;/*主界面背景白色*/
+    text-align:center;
+    margin: 50px;
+}
+
+input{
+    padding:10px;
+    margin:20px;
+    font-size:15px ;
+}
+
+#btn{
+    border:3px outset #666666;
+    border-radius: 10px;
+    width:100px;
+    height:50px;
+    font:bold 15px Tahoma;
+}
+
+form{
+    border: 10px solid #666666;
+    border-radius: 20px;
+    margin: 40px;
+    height: auto;
+    width: auto;
+    padding: 40px;
+}

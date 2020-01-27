@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>千金方-管理员主页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+	<style type="text/css">
+		.header .addData a:hover{
+			cursor: pointer;
+		}
+		#choiceWindow {
+            display: none; 
+            position: absolute; 
+            top: 28%; 
+            left: 35%; 
+            width: 30%; 
+            height: 55%; 
+            padding: 20px; 
+            border: 3px solid #ccc; 
+			color: black;
+            background-color: white;
+            z-index:2; 
+            overflow: auto; 
+        }
+        #backGround {
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 100%; 
+            height: 1100px; 
+            background-color: black; 
+            z-index:1; 
+            -moz-opacity: 0.8; 
+            opacity:.80; 
+            filter: alpha(opacity=88);
+        }
+        #x:hover {cursor: pointer;color: rgb(55,198,192);}
+		.addBtn {
+			background-color: #3366ff;
+			width:250px;
+			height:35px;
+			font-size:18px;
+			color:white;
+			text-align:center;
+		}
+		.addBtn:hover{
+			cursor: pointer;
+			background-color: #18223d;
+		}
+	</style>
+
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //发送Ajax获取数据
+            $.ajax({
+                type: "POST",
+                url: "getDoctor.php",
+                success: function(msg){
+                    var obj = JSON.parse(msg);
+					//插入数据
+					for (var i=0; i<obj.length; i++){
+						var ulId = "input#group-"+obj[i].doctorOffice;
+						var ul = $(ulId).siblings("ul");
+						var insertInfo = "<li><a>"+obj[i].doctorName+"："+obj[i].doctorIntro.substr(0, 30)+"......"+"</a></li>";
+						$(insertInfo).appendTo(ul);
+					}
+					
+                }
+            });
+        });
+
+		function addDoctor(){
+			$("#choiceWindow").slideDown(300);
+			$("#backGround").show();
+		}
+
+		function closeChoiceWindow(){
+			$("#choiceWindow").slideUp(300);
+			$("#backGround").hide();
+		}
+
+		function uploadDoctor(){
+			if($("#uploadName").val() == ""){
+				alert("请输入医生姓名！");
+			}
+			var uploadOffice = $("#uploadOffice option:selected").val();
+			var uploadName = $("#uploadName").val();
+			var uploadIntro = $("#uploadIntro").val();
+			//发送Ajax获取数据
+            $.ajax({
+                type: "POST",
+                url: "uploadDoctor.php",
+				data: "doctorOffice="+uploadOffice+"&doctorName="+uploadName+"&doctorIntro="+uploadIntro,
+                success: function(msg){
+                    if(msg == 1){
+						alert("添加成功！");
+					}else{
+						alert("添加失败！");
+					}
+                }
+            });
+		}
+
+    </script>
+</head>
+<body>
+<!-- 顶部 -->
+<div class="header">
+    <div class="title">
+        <span>管理员系统</span>
+    </div>
+	<div class="addData">
+		<a onclick="addDoctor()">添加数据</a>
+	</div>
+</div>
+
+<!--悬浮窗-->
+<div id="choiceWindow">
+	<label id="x" style="position:absolute;top:2px;left:95%;font-size:25px;" onclick="closeChoiceWindow()">x</label>
+	<form>
+		<label>请选择要添加的科室：</label>&nbsp;&nbsp;&nbsp;
+		<select id="uploadOffice">
+			<option value="0">心脏与血管外科</option>
+			<option value="1">肿瘤科</option>
+			<option value="2">男科</option>
+			<option value="3">整形美容科</option>
+			<option value="4">神经外科</option>
+			<option value="5">内分泌与代谢科</option>
+			<option value="6">皮肤性病科</option>
+			<option value="7">呼吸内科</option>
+			<option value="8">内科</option>
+			<option value="9">眼科</option>
+			<option value="10">普外科</option>
+			<option value="11">烧伤科</option>
+			<option value="12">口腔颌面科</option>
+			<option value="13">肾内科</option>
+			<option value="14">甲状腺乳腺外科</option>
+			<option value="15">精神科</option>
+			<option value="16">风湿免疫科</option>
+			<option value="17">泌尿外科</option>
+			<option value="18">耳鼻喉科</option>
+			<option value="19">神经内科</option>
+			<option value="20">消化内科</option>
+			<option value="21">妇科</option>
+			<option value="22">心理科</option>
+			<option value="23">感染科</option>
+			<option value="24">骨科</option>
+			<option value="25">血液病科</option>
+			<option value="26">心血管内科</option>
+			<option value="27">胸外科</option>
+			<option value="28">儿科</option>
+			<option value="29">产科</option>
+			<option value="30">新生儿科</option>
+			<option value="31">急诊科</option>
+		</select>
+		<br></br>
+		医生姓名：<input type="text" name="doctorName" id="uploadName"/>
+		<br/></br>
+		医生介绍：<textarea rows="10" cols="40" name="doctorIntro", id="uploadIntro"></textarea>
+		</br></br></br>
+		<center><button class="addBtn" onclick="uploadDoctor()">上传</button></center>
+	</form>
+</div>
+<div id="backGround"></div>
+
+<!-- 手风琴框架 -->
+<ul class="cd-accordion-menu animated">
+    <li class="has-children">
+        <input type="checkbox" name ="group-1" id="group-1">
+        <label for="group-1">心脏与血管外科</label>
+        <ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-2" id="group-2">
+        <label for="group-2">肿瘤科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-3" id="group-3">
+        <label for="group-3">男科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-4" id="group-4">
+        <label for="group-4">整形美容科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-5" id="group-5">
+        <label for="group-5">神经外科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-6" id="group-6">
+        <label for="group-6">内分泌与代谢科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-7" id="group-7">
+        <label for="group-7">皮肤性病科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-8" id="group-8">
+        <label for="group-8">呼吸内科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-9" id="group-9">
+        <label for="group-9">内科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-10" id="group-10">
+        <label for="group-10">眼科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-11" id="group-11">
+        <label for="group-11">普外科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-12" id="group-12">
+        <label for="group-12">烧伤科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-13" id="group-13">
+        <label for="group-13">口腔颌面科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-14" id="group-14">
+        <label for="group-14">肾内科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-15" id="group-15">
+        <label for="group-15">甲状腺乳腺外科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-16" id="group-16">
+        <label for="group-16">精神科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-17" id="group-17">
+        <label for="group-17">风湿免疫科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-18" id="group-18">
+        <label for="group-18">泌尿外科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-19" id="group-19">
+        <label for="group-19">耳鼻喉科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-20" id="group-20">
+        <label for="group-20">神经内科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-21" id="group-21">
+        <label for="group-21">消化内科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-22" id="group-22">
+        <label for="group-22">妇科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-23" id="group-23">
+        <label for="group-23">心理科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-24" id="group-24">
+        <label for="group-24">感染科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-25" id="group-25">
+        <label for="group-25">骨科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-26" id="group-26">
+        <label for="group-26">血液病科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-27" id="group-27">
+        <label for="group-27">心血管内科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-28" id="group-28">
+        <label for="group-28">胸外科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-29" id="group-29">
+        <label for="group-29">儿科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-30" id="group-30">
+        <label for="group-30">产科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-31" id="group-31">
+        <label for="group-31">新生儿科</label>
+		<ul></ul>
+    </li>
+
+    <li class="has-children">
+        <input type="checkbox" name ="group-32" id="group-32">
+        <label for="group-32">急诊科</label>
+		<ul></ul>
+    </li>
+</ul>
+
+</body>
+</html>
