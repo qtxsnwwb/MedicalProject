@@ -1,10 +1,13 @@
 package com.medicalproject.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,8 @@ import com.medicalproject.service.ListenService;
 import com.medicalproject.util.DBUtils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 /**
@@ -106,11 +111,23 @@ public class DoctorAdapter extends BaseAdapter {
                     String userIDInner = userID;
                     @Override
                     public void run() {
+                        Message message = handler.obtainMessage();
+                        //获取当前挂号人数
+                        int teamPeople = DBUtils.getCurrentPeople(list.get(position).get("ItemName").toString());
+                        Calendar calendar = new GregorianCalendar();
+                        if(calendar.get(Calendar.HOUR_OF_DAY) < 9){
+                            message.obj = "未到上班时间，无法挂号";
+                        }else if(calendar.get(Calendar.HOUR_OF_DAY)*60+calendar.get(Calendar.MINUTE)+(teamPeople+1)*15 > 17*60){
+                            message.obj = "排队人数过多，今日无法排到，请明天再挂号";
+                        }else{
+                            message.obj = "挂号成功";
+                        }
+
                         DBUtils.addCallNumber(userID, list.get(position).get("ItemName").toString());
+                        handler.sendMessage(message);
                     }
                 }).start();
-                for(int i=0; i<100000; i++){}
-                Toast.makeText(layoutInflater.getContext(), "挂号成功！", Toast.LENGTH_SHORT).show();
+                for(int i=0; i<1000000; i++){}
 
                 //开启Service监听
                 //存储医生姓名
@@ -131,6 +148,15 @@ public class DoctorAdapter extends BaseAdapter {
         private TextView ItemIntro;
         private Button ItemBtn;
     }
+
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            String resp = (String) msg.obj;
+            Toast.makeText(layoutInflater.getContext(), resp, Toast.LENGTH_SHORT).show();
+        }
+    };
 
     /**
      * 显示医生详细信息
