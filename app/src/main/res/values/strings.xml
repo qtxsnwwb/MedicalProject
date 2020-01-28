@@ -31,5 +31,16 @@
     <string name="diagnose_result">诊断结果</string>
     <string name="medicine_advice">建议用药</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="medicine_name">药品名称：</string>
+    <string name="medicine_composition">成份：</string>
+    <string name="medicine_indication">适应症：</string>
+    <string name="medicine_usage">用法用量：</string>
+    <string name="medicine_adverse_reaction">不良反应：</string>
+    <string name="medicine_taboo">禁忌：</string>
+    <string name="medicine_note">注意事项：</string>
+    <string name="medicine_drug_interaction">药物相互作用：</string>
+    <string name="medicine_approval_number">批准文号：</string>
+    <string name="medicine_manufacturer">生产企业：</string>
+    <string name="medicine_drug_classification">药物分类：</string>
 
 </resources>

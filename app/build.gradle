@@ -29,5 +29,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/mysql-connector-java-5.0.4-bin.jar')
-    implementation files('libs/mysql-connector-java-5.0.4-bin.jar')
+    implementation files('libs/jsoup-1.12.1.jar')
 }

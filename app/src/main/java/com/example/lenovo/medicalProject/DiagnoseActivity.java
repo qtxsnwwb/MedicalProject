@@ -2,6 +2,7 @@ package com.example.lenovo.medicalProject;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
@@ -55,7 +56,6 @@ public class DiagnoseActivity extends AppCompatActivity {
             String userIDInner = userID;
             @Override
             public void run() {
-//                List<ReportBean> list = DBUtils.getReportInfoByUserID("234");
                 List<ReportBean> list = DBUtils.getReportInfoByUserID(userIDInner);
                 Message message = handler.obtainMessage();
                 message.obj = list;
@@ -68,8 +68,10 @@ public class DiagnoseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //此处设置爬虫
-
-
+                String medicineName = (String) tv_medicine.getText();
+                Intent intent = new Intent(sContext, CrawlerActivity.class);
+                intent.putExtra("medicineName", medicineName);
+                startActivity(intent);
             }
         });
     }
