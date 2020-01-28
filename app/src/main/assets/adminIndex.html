@@ -77,17 +77,20 @@
                 }
             });
         });
-
+		
+		//添加医生
 		function addDoctor(){
 			$("#choiceWindow").slideDown(300);
 			$("#backGround").show();
 		}
-
+		
+		//关闭选择窗口
 		function closeChoiceWindow(){
 			$("#choiceWindow").slideUp(300);
 			$("#backGround").hide();
 		}
-
+		
+		//上传医生
 		function uploadDoctor(){
 			if($("#uploadName").val() == ""){
 				alert("请输入医生姓名！");

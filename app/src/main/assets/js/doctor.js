@@ -46,9 +46,7 @@ function uploadReport() {
     });
 }
 
-/**
- * 叫号
- */
+//叫号
 function callNumber() {
     //获取医生信息
     var doctorName = $.cookie("doctorName");
@@ -73,9 +71,7 @@ function callNumber() {
     });
 }
 
-/**
- * 获取挂号排队信息
- */
+//获取挂号排队信息
 function getTeamMsg(doctorName) {
     //获取医生信息
     $.ajax({

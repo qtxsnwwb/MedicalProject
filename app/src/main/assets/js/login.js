@@ -64,6 +64,7 @@ function skipToDoctor(){
     window.location.href = '../doctorIndex.html';
 }
 
+//登录成功后跳转到管理员主页
 function skipToAdmin(){
 	window.location.href = '../adminIndex.html';
 }
