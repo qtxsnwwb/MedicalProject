@@ -55,7 +55,6 @@
                 android:id="@+id/tv_patient_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="zhangsan"
                 android:textSize="18dp"/>
 
         </LinearLayout>
@@ -84,7 +83,6 @@
                 android:id="@+id/tv_patient_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="man"
                 android:textSize="18dp"/>
 
         </LinearLayout>
@@ -113,7 +111,6 @@
                 android:id="@+id/tv_patient_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="23"
                 android:textSize="18dp"/>
 
         </LinearLayout>
@@ -157,7 +154,6 @@
                 android:id="@+id/tv_diagnose_office"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="zhongliuke"
                 android:textSize="18dp"/>
 
         </LinearLayout>
@@ -186,7 +182,6 @@
                 android:id="@+id/tv_diagnose_doctor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="lisi"
                 android:textSize="18dp"/>
 
         </LinearLayout>
@@ -232,7 +227,6 @@
             android:id="@+id/tv_diagnose_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="asfdscwefcsdvsdcsdvcx"
             android:textSize="18dp"
             android:layout_marginTop="10dp"/>
 
@@ -268,7 +262,6 @@
             android:id="@+id/tv_medicine_advice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="asfdscwefcsdvsdcsdvcx"
             android:textSize="18dp"
             android:clickable="true"
             android:layout_marginTop="10dp"/>

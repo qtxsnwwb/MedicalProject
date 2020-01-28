@@ -95,13 +95,6 @@ public class DoctorAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 //此处设置挂号功能
-
-                //测试代码
-                SharedPreferences sp1 = layoutInflater.getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-                SharedPreferences.Editor edit = sp1.edit();
-                edit.putString("userID", "234");
-                edit.commit();
-
                 //获取患者ID
                 SharedPreferences sp = layoutInflater.getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
                 final String userID = sp.getString("userID", "");

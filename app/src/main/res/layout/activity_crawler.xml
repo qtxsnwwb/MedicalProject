@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginBottom="30sp">
+                <!-- 标题 -->
+                <TextView
+                    android:id="@+id/tv_medicine_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30dp"/>
+
+                <!-- 药品名称 -->
+                <TextView
+                    android:id="@+id/tv_medicine_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_name"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_name_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 成份 -->
+                <TextView
+                    android:id="@+id/tv_medicine_composition_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_composition"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_composition_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 适应症 -->
+                <TextView
+                    android:id="@+id/tv_medicine_indication_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_indication"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_indication_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 用法用量 -->
+                <TextView
+                    android:id="@+id/tv_medicine_usage_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_usage"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_usage_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp" />
+
+                <!-- 不良反应 -->
+                <TextView
+                    android:id="@+id/tv_medicine_adverse_reaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_adverse_reaction"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_adverse_reaction_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:id="@+id/view_line_medicine_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp" />
+
+                <!-- 禁忌 -->
+                <TextView
+                    android:id="@+id/tv_medicine_taboo_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_taboo"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_taboo_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 注意事项 -->
+                <TextView
+                    android:id="@+id/tv_medicine_note_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_note"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_note_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 药物相互作用 -->
+                <TextView
+                    android:id="@+id/tv_medicine_drug_interaction_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_drug_interaction"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_drug_interaction_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 批准文号 -->
+                <TextView
+                    android:id="@+id/tv_medicine_approval_number_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_approval_number"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_approval_number_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 生产企业 -->
+                <TextView
+                    android:id="@+id/tv_medicine_manufacturer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_manufacturer"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_manufacturer_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+
+                <!-- 药物分类 -->
+                <TextView
+                    android:id="@+id/tv_medicine_drug_classification_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/medicine_drug_classification"
+                    android:layout_marginTop="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_medicine_drug_classification_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#303F9F"
+                    android:layout_marginTop="20sp"/>
+        </LinearLayout>
+</ScrollView>
+
