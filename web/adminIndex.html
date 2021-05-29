@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>千金方-管理员主页</title>
+</head>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    function ajax(){
+        $.ajax({
+            url: 'http://127.0.0.1:8080/',
+            dataType: 'json',
+            type: 'post',
+            success: function(data){
+                alert(data);
+            }
+        })
+    }
+</script>
+<body>
+    <button onclick="ajax()">button</button>
+</body>
+</html>
